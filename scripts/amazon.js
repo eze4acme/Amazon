@@ -55,9 +55,12 @@ products.forEach(product => {
 })
 document.querySelector('.js-products-grid').innerHTML = productHtml
 
-document.querySelectorAll('.js-add-to-cart')
+const btn = [...document.querySelectorAll('.js-add-to-cart')]
 .forEach( (button )=> {
   button.addEventListener('click', () => {
-    console.log(button.dataset.productName);
+    const productName = button.dataset.productName;
+    cart = [...cart, {productName: productName,
+      quantity: 1}]
+      console.log(cart);
   })
 })
