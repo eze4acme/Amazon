@@ -69,5 +69,14 @@ if (matchingItem) {
       quantity: 1}]
 }
    console.log(cart);
+   let {totalQty} = cart.reduce((total, cartItem) =>{
+      const {quantity} = cartItem
+      total.totalQty += quantity
+    return total
+   },{
+    totalQty: 0
+   })
+   document.querySelector('.js-cart-quantity').innerHTML = totalQty
   })
 })
+
