@@ -55,8 +55,8 @@ products.forEach(product => {
 })
 document.querySelector('.js-products-grid').innerHTML = productHtml
 
-const btn = [...document.querySelectorAll('.js-add-to-cart')]
-.forEach( (button )=> {
+const btn = [...document.querySelectorAll('.js-add-to-cart')];
+btn.forEach( (button )=> {
   button.addEventListener('click', () => {
     const productId = button.dataset.productId;
 let matchingItem = cart.find((item) => {
@@ -68,7 +68,6 @@ if (matchingItem) {
    cart = [...cart, {productId: productId,
       quantity: 1}]
 }
-   console.log(cart);
    let {totalQty} = cart.reduce((total, cartItem) =>{
       const {quantity} = cartItem
       total.totalQty += quantity
